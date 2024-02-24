@@ -17,15 +17,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,6 +32,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -59,13 +56,14 @@ fun ForYouRoute(
 ) {
     LazyColumn(
         modifier = Modifier
-            .background(color = Colors.colorBackground)
+            .background(color = Colors.colorBackground),
+        contentPadding = PaddingValues(bottom = Dimens.MARGIN_20)
     ) {
 
         item {
-            Spacer(modifier = Modifier.height(Dimens.MARGIN_XMEDIUM))
+            Spacer(modifier = Modifier.height(Dimens.MARGIN_MEDIUM_2))
             ForYouAppBar(modifier = modifier)
-            Spacer(modifier = Modifier.height(Dimens.MARGIN_XMEDIUM))
+            Spacer(modifier = Modifier.height(Dimens.MARGIN_MEDIUM_2))
             HomeSearchBar(modifier = modifier)
             Spacer(modifier = modifier.height(Dimens.MARGIN_XLARGE))
             ComingSoonList(modifier = modifier)
@@ -100,7 +98,7 @@ private fun LazyListScope.PopularMoviesItem(modifier: Modifier) {
                     modifier = modifier.size(90.dp)
                 )
             }
-            Spacer(modifier = modifier.width(Dimens.MARGIN_XMEDIUM))
+            Spacer(modifier = modifier.width(Dimens.MARGIN_MEDIUM_2))
             Column {
                 Text(
                     text = "Resident Evil - Racoon City",
@@ -109,7 +107,9 @@ private fun LazyListScope.PopularMoviesItem(modifier: Modifier) {
                     style = MaterialTheme.typography.titleMedium,
                 )
                 Spacer(modifier = modifier.height(Dimens.MARGIN_SMALL))
-                Row {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
                     Text(
                         text = "4.5",
                         color = Color.Gray
@@ -119,7 +119,7 @@ private fun LazyListScope.PopularMoviesItem(modifier: Modifier) {
                     RatingBar(
                         value = 2f,
                         style = RatingBarStyle.Fill(),
-                        size = Dimens.MARGIN_20,
+                        size = Dimens.MARGIN_MEDIUM_2,
                         spaceBetween = Dimens.MARGIN_XSMALL,
                         onValueChange = {
 //                            rating = it
@@ -153,19 +153,10 @@ private fun PopularMoviesList(
             verticalAlignment = Alignment.CenterVertically,
             modifier = modifier.fillMaxWidth()
         ) {
-            Text(
-                text = "Popular Movies",
-                modifier = modifier.padding(horizontal = Dimens.MARGIN_20),
-                color = Colors.colorWhite,
-                style = MaterialTheme.typography.titleLarge,
-            )
-            Text(
-                text = "See all",
-                modifier = modifier.padding(horizontal = Dimens.MARGIN_20),
-                color = Color.Gray
-            )
+            ListTitleText(modifier = modifier, text = "Popular Movies")
+            ListTitleSeeMore(modifier)
         }
-        Spacer(modifier = modifier.height(Dimens.MARGIN_XMEDIUM))
+        Spacer(modifier = modifier.height(Dimens.MARGIN_MEDIUM_2))
     }
 }
 
@@ -177,13 +168,8 @@ fun ComingSoonList(
     Column(
         modifier = modifier.fillMaxWidth()
     ) {
-        Text(
-            text = "Coming Soon",
-            modifier = modifier.padding(horizontal = Dimens.MARGIN_20),
-            color = Colors.colorWhite,
-            style = MaterialTheme.typography.titleLarge,
-        )
-        Spacer(modifier = modifier.height(Dimens.MARGIN_XMEDIUM))
+        ListTitleText(modifier = modifier, text = "Coming Soon")
+        Spacer(modifier = modifier.height(Dimens.MARGIN_MEDIUM_2))
         LazyRow(
             modifier = Modifier.fillMaxWidth(),
             contentPadding = PaddingValues(horizontal = Dimens.MARGIN_20),
@@ -210,7 +196,7 @@ fun ComingSoonList(
                                 modifier = modifier.aspectRatio((4 / 2.5).toFloat())
                             )
                         }
-                        Spacer(modifier = modifier.height(Dimens.MARGIN_XMEDIUM))
+                        Spacer(modifier = modifier.height(Dimens.MARGIN_MEDIUM_2))
                         Text(
                             text = "Resident Evil - Racoon City",
                             modifier = modifier,
@@ -231,6 +217,32 @@ fun ComingSoonList(
 }
 
 @Composable
+fun ListTitleText(
+    modifier: Modifier,
+    text: String,
+    color: Color = Colors.colorWhite,
+    style: TextStyle = MaterialTheme.typography.titleLarge
+) {
+    Text(
+        text = text,
+        modifier = modifier.padding(horizontal = Dimens.MARGIN_20),
+        color = color,
+        style = style,
+    )
+}
+
+@Composable
+fun ListTitleSeeMore(
+    modifier: Modifier,
+) {
+    Text(
+        text = "See all",
+        modifier = modifier.padding(horizontal = Dimens.MARGIN_20),
+        color = Color.Gray
+    )
+}
+
+@Composable
 fun HomeSearchBar(
     modifier: Modifier
 ) {
@@ -242,7 +254,7 @@ fun HomeSearchBar(
             .background(color = Color.LightGray)
             .padding(
                 horizontal = Dimens.MARGIN_LARGE,
-                vertical = Dimens.MARGIN_XMEDIUM
+                vertical = Dimens.MARGIN_MEDIUM_2
             )
     ) {
         Image(

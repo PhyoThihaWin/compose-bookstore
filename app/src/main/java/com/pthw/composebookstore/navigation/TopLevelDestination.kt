@@ -20,16 +20,22 @@ enum class TopLevelDestination(
         iconTextId = "For you",
         titleTextId = "For you",
     ),
+    INTERESTS(
+        selectedIcon = NiaIcons.Grid3x3,
+        unselectedIcon = NiaIcons.Grid3x3,
+        iconTextId = "Interests",
+        titleTextId = "Interests",
+    ),
     BOOKMARKS(
         selectedIcon = NiaIcons.Bookmarks,
         unselectedIcon = NiaIcons.BookmarksBorder,
         iconTextId = "Saved",
         titleTextId = "Saved",
     ),
-    INTERESTS(
-        selectedIcon = NiaIcons.Grid3x3,
-        unselectedIcon = NiaIcons.Grid3x3,
-        iconTextId = "Interests",
-        titleTextId = "Interests",
+    SETTINGS(
+        selectedIcon = NiaIcons.Settings,
+        unselectedIcon = NiaIcons.SettingsBorder,
+        iconTextId = "Settings",
+        titleTextId = "Settings",
     ),
 }

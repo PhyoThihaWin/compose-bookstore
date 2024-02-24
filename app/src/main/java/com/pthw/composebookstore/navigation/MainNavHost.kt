@@ -25,6 +25,7 @@ import com.pthw.composebookstore.feature.bookmark.navigation.bookmarksScreen
 import com.pthw.composebookstore.feature.foryou.navigation.forYouNavigationRoute
 import com.pthw.composebookstore.feature.foryou.navigation.forYouScreen
 import com.pthw.composebookstore.feature.interests.navigation.interestsGraph
+import com.pthw.composebookstore.feature.setting.navigation.settingGraph
 import com.pthw.composebookstore.ui.main.MainScreenState
 import kotlinx.coroutines.awaitAll
 
@@ -48,10 +49,19 @@ fun MainNavHost(
         modifier = modifier,
     ) {
         forYouScreen(onTopicClick = { })
+
+        interestsGraph(
+            onTopicClick = {},
+            nestedGraphs = {
+
+            },
+        )
+
         bookmarksScreen(
             onTopicClick = { },
         )
-        interestsGraph(
+
+        settingGraph(
             onTopicClick = {},
             nestedGraphs = {
 

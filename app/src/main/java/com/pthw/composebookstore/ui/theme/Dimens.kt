@@ -14,7 +14,7 @@ object Dimens {
     val MARGIN_MEDIUM = 8.dp
     val MARGIN_10 = 10.dp
     val MARGIN_12 = 12.dp
-    val MARGIN_XMEDIUM = 16.dp
+    val MARGIN_MEDIUM_2 = 16.dp
     val MARGIN_18 = 18.dp
     val MARGIN_20 = 20.dp
     val MARGIN_LARGE = 24.dp
@@ -25,7 +25,7 @@ object Dimens {
 
     val RADIUS_SMALL = 4.dp
     val RADIUS_MEDIUM = 8.dp
-    val RADIUS_XMEDIUM = 16.dp
+    val RADIUS_MEDIUM_2 = 16.dp
     val RADIUS_20 = 20.dp
     val RADIUS_LARGE = 24.dp
     val RADIUS_XLARGE = 100.dp
@@ -34,11 +34,12 @@ object Dimens {
     val TEXT_XSMALL = 10.sp
     val TEXT_SMALL = 12.sp
     val TEXT_REGULAR = 14.sp
-    val TEXT_XREGULAR = 16.sp
-    val TEXT_XXREGULAR = 18.sp
+    val TEXT_REGULAR_2 = 16.sp
+    val TEXT_REGULAR_3 = 18.sp
     val TEXT_LARGE = 20.sp
     val TEXT_XLARGE = 22.sp
-    val TEXT_XXLARGE = 24.sp
-    val TEXT_XXXLARGE = 28.sp
+    val TEXT_HEADING = 24.sp
+    val TEXT_HEADING_2 = 28.sp
+    val TEXT_BIG = 32.sp
 
 }

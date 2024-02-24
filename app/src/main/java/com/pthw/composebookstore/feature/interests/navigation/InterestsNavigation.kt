@@ -23,7 +23,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.pthw.composebookstore.feature.interests.InterestsRoute
 
-private const val INTERESTS_GRAPH_ROUTE_PATTERN = "interests_graph"
+const val INTERESTS_GRAPH_ROUTE_PATTERN = "interests_graph"
 const val interestsRoute = "interests_route"
 
 fun NavController.navigateToInterestsGraph(navOptions: NavOptions? = null) {

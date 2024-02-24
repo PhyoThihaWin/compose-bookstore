@@ -15,6 +15,7 @@ import com.pthw.composebookstore.feature.bookmark.navigation.navigateToBookmarks
 import com.pthw.composebookstore.feature.foryou.navigation.forYouNavigationRoute
 import com.pthw.composebookstore.feature.foryou.navigation.navigateToForYou
 import com.pthw.composebookstore.feature.interests.navigation.navigateToInterestsGraph
+import com.pthw.composebookstore.feature.setting.navigation.navigateToSettingsGraph
 import com.pthw.composebookstore.navigation.TopLevelDestination
 import kotlinx.coroutines.CoroutineScope
 
@@ -88,6 +89,7 @@ class MainScreenState(
                 TopLevelDestination.FOR_YOU -> navController.navigateToForYou(topLevelNavOptions)
                 TopLevelDestination.BOOKMARKS -> navController.navigateToBookmarks(topLevelNavOptions)
                 TopLevelDestination.INTERESTS -> navController.navigateToInterestsGraph(topLevelNavOptions)
+                TopLevelDestination.SETTINGS -> navController.navigateToSettingsGraph(topLevelNavOptions)
             }
         }
     }

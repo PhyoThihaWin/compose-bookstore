@@ -26,6 +26,8 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import com.pthw.composebookstore.designsystem.NiaNavigationBar
 import com.pthw.composebookstore.designsystem.NiaNavigationBarItem
+import com.pthw.composebookstore.feature.interests.navigation.INTERESTS_GRAPH_ROUTE_PATTERN
+import com.pthw.composebookstore.feature.interests.navigation.interestsRoute
 import com.pthw.composebookstore.navigation.MainNavHost
 import com.pthw.composebookstore.navigation.TopLevelDestination
 

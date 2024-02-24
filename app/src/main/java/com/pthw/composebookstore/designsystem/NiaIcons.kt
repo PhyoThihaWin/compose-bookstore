@@ -19,6 +19,7 @@ package com.pthw.composebookstore.designsystem
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.outlined.Bookmarks
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Upcoming
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.ArrowBack
@@ -53,6 +54,7 @@ object NiaIcons {
     val Person = Icons.Rounded.Person
     val Search = Icons.Rounded.Search
     val Settings = Icons.Rounded.Settings
+    val SettingsBorder = Icons.Outlined.Settings
     val ShortText = Icons.Rounded.ShortText
     val Upcoming = Icons.Rounded.Upcoming
     val UpcomingBorder = Icons.Outlined.Upcoming

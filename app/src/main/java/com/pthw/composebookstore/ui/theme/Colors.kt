@@ -9,5 +9,6 @@ object Colors {
     val Chartreuse = Color(0xFFEFF7CF)
 
     val colorWhite = Color.White
+    val colorBlack = Color.Black
     val colorBackground = Color(0xFF1B1E25)
 }
